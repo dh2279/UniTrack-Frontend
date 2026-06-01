@@ -8,7 +8,7 @@ function AllStudents() {
 
   // Fetch students
   useEffect(() => {
-    fetch("http://localhost:8091/student/get-all-students/")
+    fetch("http://localhost:8080/student/get-all-students/")
       .then((res) => res.json())
       .then((data) => setStudents(data))
       .catch((err) => console.error("Error fetching students:", err));
@@ -16,7 +16,7 @@ function AllStudents() {
 
   // Delete student
   const deleteStudent = (id) => {
-    fetch(`http://localhost:8091/student/delete-student/${id}/`, {
+    fetch(`http://localhost:8080/student/delete-student/${id}/`, {
       method: "DELETE",
     })
       .then(() => {
@@ -38,7 +38,7 @@ function AllStudents() {
 
   // Save updated student
   const updateStudent = () => {
-    fetch("http://localhost:8091/student/update-student/", {
+    fetch("http://localhost:8080/student/update-student/", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),

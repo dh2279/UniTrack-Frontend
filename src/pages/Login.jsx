@@ -3,7 +3,10 @@ import { useNavigate } from "react-router-dom";
 
 function Login() {
   const navigate = useNavigate();
-  const [loginRequest, setLoginRequest] = useState({ username: "", password: "" });
+  const [loginRequest, setLoginRequest] = useState({
+    username: "",
+    password: "",
+  });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -18,7 +21,7 @@ function Login() {
     setLoading(true);
     try {
       // Replace with your actual API endpoint
-      const response = await fetch("http://localhost:8091/user/login-user/", {
+      const response = await fetch("http://localhost:8080/user/login-user/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(loginRequest),
@@ -51,7 +54,12 @@ function Login() {
       >
         <h2 className="text-2xl font-bold text-center text-blue-600">Login</h2>
         <div className="flex flex-col gap-2">
-          <label htmlFor="username" className="text-sm font-medium text-gray-700">Username</label>
+          <label
+            htmlFor="username"
+            className="text-sm font-medium text-gray-700"
+          >
+            Username
+          </label>
           <input
             type="text"
             id="username"
@@ -63,7 +71,12 @@ function Login() {
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="password" className="text-sm font-medium text-gray-700">Password</label>
+          <label
+            htmlFor="password"
+            className="text-sm font-medium text-gray-700"
+          >
+            Password
+          </label>
           <input
             type="password"
             id="password"
@@ -74,7 +87,9 @@ function Login() {
             required
           />
         </div>
-        {error && <div className="text-red-500 text-sm text-center">{error}</div>}
+        {error && (
+          <div className="text-red-500 text-sm text-center">{error}</div>
+        )}
         <button
           type="submit"
           className="bg-blue-600 text-white py-2 rounded font-semibold hover:bg-blue-700 transition"

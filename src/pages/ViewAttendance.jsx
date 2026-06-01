@@ -18,19 +18,19 @@ function ViewAttendance() {
   const [students, setStudents] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8091/user/get-all-faculty/")
+    fetch("http://localhost:8080/user/get-all-faculty/")
       .then((res) => res.json())
       .then((data) => setFaculties(data))
       .catch((err) => console.error("Error fetching faculties:", err));
 
-    fetch("http://localhost:8091/subject/get-all-subjects/")
+    fetch("http://localhost:8080/subject/get-all-subjects/")
       .then((res) => res.json())
       .then((data) => setSubjects(data))
       .catch((err) => console.error("Error fetching subjects:", err));
   }, []);
 
   const fetchAllAttendance = () => {
-    fetch("http://localhost:8091/attendance/get-all-attendance-records/")
+    fetch("http://localhost:8080/attendance/get-all-attendance-records/")
       .then((res) => res.json())
       .then((data) => {
         console.log("data.............." + data);
@@ -41,7 +41,7 @@ function ViewAttendance() {
   };
 
   const fetchFilteredAttendance = () => {
-    let API_URL = `http://localhost:8091/attendance/get-attendance/${selectedFaculty}/${selectedSubject}/${selectedDate}`;
+    let API_URL = `http://localhost:8080/attendance/get-attendance/${selectedFaculty}/${selectedSubject}/${selectedDate}`;
 
     if (role === "admin") {
       // check all fields are filled
@@ -49,14 +49,14 @@ function ViewAttendance() {
         alert("Please select faculty, subject and date");
         return;
       }
-      API_URL = `http://localhost:8091/attendance/get-attendance/${selectedFaculty}/${selectedSubject}/${selectedDate}`;
+      API_URL = `http://localhost:8080/attendance/get-attendance/${selectedFaculty}/${selectedSubject}/${selectedDate}`;
     } else {
       if (!selectedSubject || !selectedDate) {
         alert("Please select subject and date");
         return;
       }
       const username = localStorage.getItem("username");
-      API_URL = `http://localhost:8091/attendance/get-attendance/${username}/${selectedSubject}/${selectedDate}`;
+      API_URL = `http://localhost:8080/attendance/get-attendance/${username}/${selectedSubject}/${selectedDate}`;
     }
 
     fetch(API_URL)

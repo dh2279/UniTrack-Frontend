@@ -6,7 +6,7 @@ function AddSubject() {
 
   // Fetch all subjects
   const fetchSubjects = () => {
-    fetch("http://localhost:8091/subject/get-all-subjects/")
+    fetch("http://localhost:8080/subject/get-all-subjects/")
       .then((res) => res.json())
       .then((data) => setSubjects(data))
       .catch((err) => console.error("Error fetching subjects:", err));
@@ -24,7 +24,7 @@ function AddSubject() {
       return;
     }
 
-    fetch("http://localhost:8091/subject/add-subject/", {
+    fetch("http://localhost:8080/subject/add-subject/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -50,7 +50,7 @@ function AddSubject() {
       return;
     }
 
-    fetch("http://localhost:8091/subject/update-subject/", {
+    fetch("http://localhost:8080/subject/update-subject/", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -74,7 +74,7 @@ function AddSubject() {
       return;
     }
 
-    fetch(`http://localhost:8091/subject/delete-subject/${id}/`, {
+    fetch(`http://localhost:8080/subject/delete-subject/${id}/`, {
       method: "DELETE",
     })
       .then((res) => {

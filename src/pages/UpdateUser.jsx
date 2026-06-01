@@ -16,7 +16,7 @@ function UpdateUser() {
 
   // Fetch user details by username
   useEffect(() => {
-    fetch(`http://localhost:8091/user/get-user-by-username/${username}`)
+    fetch(`http://localhost:8080/user/get-user-by-username/${username}`)
       .then((res) => {
         if (!res.ok) throw new Error("Failed to fetch user");
         return res.json();
@@ -32,7 +32,7 @@ function UpdateUser() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch("http://localhost:8091/user/update-user/", {
+    fetch("http://localhost:8080/user/update-user/", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(user),

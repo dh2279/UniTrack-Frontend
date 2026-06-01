@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import FacultyMenu from "./FacultyMenu";
+import FacultyMenu from "../components/FacultyMenu";
 
 function MarkAttendance() {
   const [subjects, setSubjects] = useState([]);
@@ -14,7 +14,7 @@ function MarkAttendance() {
 
   // Fetch subjects
   useEffect(() => {
-    fetch("http://localhost:8091/subject/get-all-subjects/")
+    fetch("http://localhost:8080/subject/get-all-subjects/")
       .then((res) => res.json())
       .then((data) => setSubjects(data))
       .catch((err) => console.error(err));
@@ -22,7 +22,7 @@ function MarkAttendance() {
 
   // Fetch students
   useEffect(() => {
-    fetch("http://localhost:8091/student/get-all-students/")
+    fetch("http://localhost:8080/student/get-all-students/")
       .then((res) => res.json())
       .then((data) => {
         setStudents(data);
@@ -81,11 +81,13 @@ function MarkAttendance() {
     console.log("Submitting payload:", payload);
 
     try {
-      const res = await fetch("http://localhost:8091/attendance/take-attendance/", {
+      const res = await fetch("http://localhost:8080/attendance/take-attendance/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
+        
       });
+      console.log("Submitting payload:", payload)
 
       if (res.ok) {
         alert("Attendance marked successfully!");

@@ -19,7 +19,7 @@ function Profile() {
 
   // Fetch user data
   useEffect(() => {
-    fetch(`http://localhost:8091/user/get-user-by-username/${username}/`)
+    fetch(`http://localhost:8080/user/get-user-by-username/${username}/`)
       .then((res) => res.json())
       .then((data) => {
         setUser(data);
@@ -33,7 +33,7 @@ function Profile() {
   };
 
   const handleUpdate = () => {
-    fetch("http://localhost:8091/user/update-user/", {
+    fetch("http://localhost:8080/user/update-user/", {
       method: "PUT", // or POST if your backend expects that
       headers: {
         "Content-Type": "application/json",

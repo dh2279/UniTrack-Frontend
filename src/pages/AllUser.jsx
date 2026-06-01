@@ -8,7 +8,7 @@ function AllUser() {
 
   // Fetch all users
   const fetchUsers = () => {
-    fetch("http://localhost:8091/user/get-all-user/")
+    fetch("http://localhost:8080/user/get-all-user/")
       .then((res) => res.json())
       .then((data) => setUsers(data))
       .catch((err) => console.error("Error fetching users:", err));
@@ -25,7 +25,7 @@ function AllUser() {
     }
 
     fetch(
-      `http://localhost:8091/user/delete-user-by-username?username=${username}`,
+      `http://localhost:8080/user/delete-user-by-username?username=${username}`,
       {
         method: "DELETE",
       }

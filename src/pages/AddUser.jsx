@@ -26,7 +26,7 @@ function AddUser() {
     setError("");
     setSuccess("");
     try {
-      const response = await fetch("http://localhost:8091/user/register-user/", {
+      const response = await fetch("http://localhost:8080/user/register-user/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
