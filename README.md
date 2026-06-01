@@ -1,17 +1,34 @@
-<<<<<<< HEAD
-# React + Vite
+# Attendance Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web-based Attendance Management System developed to simplify student attendance tracking and management for educational institutions.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Student Attendance Management
+- Faculty Login
+- Subject Management
+- Attendance Recording
+- Attendance History
+- Date-wise Attendance Tracking
+- Dashboard Overview
+- REST API Integration
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# Samstrack-Frontend
-Samstrack Frontend is a modern React-based web application built for managing and tracking student-related activities efficiently. The project provides a clean and responsive user interface for handling student data, attendance, records, and other academic management features.
->>>>>>> e7baba32e1092043996c4ff41ef1937bed5d0921
+### Frontend
+- React.js
+- Vite
+- HTML
+- CSS
+- JavaScript
+
+### Backend
+- Java
+- Spring Boot
+- Spring Data JPA
+- Hibernate
+
+### Database
+- MySQL
+
+Developed during Full Stack Java Development Training Program using React, Spring Boot, and MySQL.
